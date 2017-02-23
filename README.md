@@ -23,7 +23,7 @@ ls -ali /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Dev
 安装libelf
 brew install libelf~~
 拷贝 `elf.h` (二选一，两个都行)
-- [GitHub]（https://gist.github.com/mlafeldt/3885346）
+- [GitHub](https://gist.github.com/mlafeldt/3885346)
 - `/Volumes/android/aosp/external/elfutils/libelf/elf.h`，遇到了`features.h`文件未找到的错误，就将`#include <features.h>` 一行注释掉。
 将 `elf.h` 拷贝到 `/usr/include` 或者 `/usr/local/include` 中，推荐放在后者，放在前者的话系统升级时会覆盖。
 目前发现 `libelf` 不需要。
