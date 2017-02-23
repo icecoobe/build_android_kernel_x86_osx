@@ -23,12 +23,12 @@ ls -ali /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Dev
 安装libelf
 brew install libelf~~
 拷贝 `elf.h` (二选一，两个都行)
-1.（https://gist.github.com/mlafeldt/3885346）
-2./Volumes/android/aosp/external/elfutils/libelf/elf.h，遇到了 features.h 文件未找到的错误，就将 #include <features.h> 一行注释掉。
-将 elf.h 拷贝到 /usr/include 或者 /usr/local/include 中，推荐放在后者，放在前者的话系统升级时会覆盖。
-目前发现 libelf 不需要。
+- [GitHub]（https://gist.github.com/mlafeldt/3885346）
+- `/Volumes/android/aosp/external/elfutils/libelf/elf.h`，遇到了`features.h`文件未找到的错误，就将`#include <features.h>` 一行注释掉。
+将 `elf.h` 拷贝到 `/usr/include` 或者 `/usr/local/include` 中，推荐放在后者，放在前者的话系统升级时会覆盖。
+目前发现 `libelf` 不需要。
 
-### byteswap.h file not found
+### `byteswap.h` file not found
 ```
 In file included from arch/x86/tools/relocs_32.c:1:
 arch/x86/tools/relocs.h:13:10: fatal error: 'byteswap.h' file not found
@@ -44,13 +44,13 @@ make[1]: *** [arch/x86/tools/relocs_32.o] Error 1
 等这一个C文件里的错误。
 
 根据Linux的github里面的sh脚本，这个文件应该是根据
-arch/x86/kernel/cpu/mkcapflags.sh
-/Volumes/android/x86_64/arch/x86/include/asm/cpufeature.h 和生成的。
+`arch/x86/kernel/cpu/mkcapflags.sh`
+`/Volumes/android/x86_64/arch/x86/include/asm/cpufeature.h` 和生成的。
 
-解决：拷贝对应文件夹中的capflags.c
+解决：拷贝对应文件夹中的`capflags.c`
 
-### 下载 GNU sed 和 stat
-起初未替换 sed 和stat， 内核编译好了，启动不了
+### 下载 `GNU sed` 和 `stat`
+起初未替换`sed` 和`stat`， 内核编译好了，启动不了
 ```
 brew install gnu-sed coreutils
 ```
