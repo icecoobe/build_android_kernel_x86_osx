@@ -8,15 +8,17 @@ MacBook Pro (Retina, 13-inch, Early 2015)
 macOS Sierra, 10.12.3
 
 ## OS X SDK
+```
 ls -ali /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs
 1915385 drwxr-xr-x  5 root  wheel  170  2  9 09:37 .
 1914962 drwxr-xr-x  5 root  wheel  170 12 16 06:44 ..
 1915386 drwxr-xr-x  5 root  wheel  170  9 17  2017 MacOSX.sdk
 2086424 drwxr-xr-x@ 5 ice   wheel  170 11 16  2015 MacOSX10.11.sdk
 1948121 lrwxr-xr-x  1 root  wheel   10  2  9 09:08 MacOSX10.12.sdk -> MacOSX.sdk
+```
 
 ## Issue fixing
-## `elf.h` file not found
+### `elf.h` file not found
 ~~安装homebrew
 安装libelf
 brew install libelf~~
